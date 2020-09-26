@@ -18,44 +18,53 @@ noTask();
 // total tasks present
 let tasksPresent = function(){
     document.getElementById('tasks-left').innerHTML = numberOfTasks;
-
 }
 
-// Add a task on keypress enter
 let userInput = document.getElementById('text-box');
-userInput.addEventListener('keypress', function(e){  
+// function to add new task
+let addNewTask = function(){
     let text;
-    if(e.key === "Enter"){
-        // getting text from textbox
-        text = userInput.value;
-        if(text === ""){
-            return;
-        }
-        // increase number of tasks
-        numberOfTasks += 1;
-        // checks if no task is left then shows a statement to add tasks
-        noTask();
-        // text is cleared from textbox
-        userInput.value = "";
-        // crating a new task with required values
-        let addTask = `<div id="task${taskNumber}" class="task p-2 d-flex justify-content-between">
-        <div>
-            <input class="check-task" type="checkbox" title="Check if completed!">
-            <span>${text}</span>
-        </div>
-        <div class="delete-icon" style="cursor: pointer;">
-            <i id="${taskNumber}" class="delete far fa-times-circle" title="Delete this task!"></i>
-        </div>
-        </div>`;
-
-        // inserting the new task before p tag in the task-container
-        document.getElementById('append').insertAdjacentHTML("beforebegin", addTask);
-        
-        // increasing number of tasks
-        taskNumber += 1;
-        // changes the UI of total tasks in the list
-        tasksPresent();
+    // getting text from textbox
+    text = userInput.value;
+    if(text === ""){
+        return;
     }
+    // increase number of tasks
+    numberOfTasks += 1;
+    // checks if no task is left then shows a statement to add tasks
+    noTask();
+    // text is cleared from textbox
+    userInput.value = "";
+    // crating a new task with required values
+    let addTask = `<div id="task${taskNumber}" class="task p-2 d-flex justify-content-between">
+    <div>
+        <input class="check-task" type="checkbox" title="Check if completed!">
+        <span>${text}</span>
+    </div>
+    <div class="delete-icon" style="cursor: pointer;">
+        <i id="${taskNumber}" class="delete far fa-times-circle" title="Delete this task!"></i>
+    </div>
+    </div>`;
+
+    // inserting the new task before p tag in the task-container
+    document.getElementById('append').insertAdjacentHTML("beforebegin", addTask);
+    
+    // increasing number of tasks
+    taskNumber += 1;
+    // changes the UI of total tasks in the list
+    tasksPresent();
+}
+
+// add new task on pressing enter
+userInput.addEventListener('keypress', function(e){  
+    if(e.key === "Enter"){
+        addNewTask();
+    }
+});
+
+// add new task on clicking the add button
+document.getElementById('add').addEventListener('click', function(){
+    addNewTask();
 });
 
 // adding event listener to whole document (event delegation)

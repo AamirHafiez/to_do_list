@@ -17,3 +17,7 @@
 .task:hover{
     background-color: #D5D5D5;
 }
+
+.add-button:hover{
+    color: rgb(28, 136, 77);
+}
