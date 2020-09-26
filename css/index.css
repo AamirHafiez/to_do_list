@@ -1,0 +1,19 @@
+.delete-icon i{
+    visibility: hidden;
+}
+
+.task:hover > .delete-icon i{
+    visibility: visible;
+}
+
+.check-task:checked ~ span{
+    text-decoration: line-through;
+}
+
+.task{
+    border-radius: 20px;
+}
+
+.task:hover{
+    background-color: #D5D5D5;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!-- Required meta tags Bootstrap-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+        <!-- external css -->
+        <link rel="stylesheet" href="./css/index.css">
+        <title>To Do List</title>
+    </head>
+    <body>
+        
+        <!-- main container -->
+        <main id="container" class="col-10 col-md-8 col-lg-6 mx-auto p-4 mt-5 bg-dark">
+            <!-- heading -->
+            <div class="col-7 mx-auto text-light">
+                <h1>MY TO DO LIST</h1>
+            </div>
+            
+            
+            <!-- to do list container -->
+            <div id="to-do-list" class="col-10 bg-light mx-auto p-4">
+                <!-- enter task (text box and icon) -->
+                <div class="rounded p-2" style="background-color: #D5D5D5; font-size: x-large;">
+                    <i class="fas fa-thumbtack"></i>
+                    <input id="text-box" class="col-10 border-0 bg-transparent" style="outline: none;" placeholder="What needs to be done?" type="text" id="textbox" title="Press Enter To add Task!">
+                </div>
+                <hr>
+                <!-- list of tasks conatainer -->
+                <!-- adding task using JavaScript -->
+                <div id="tasks-container">
+                        <p id="append"></p>
+                </div>
+                <hr>
+                <!-- footer -->
+                <div class="d-flex justify-content-between" style="font-size: small;">
+                    <p><span id="tasks-left">0</span> Task/s</p>                   
+                </div>
+            </div>
+        </main>
+
+        <!-- font awesome cdn -->
+        <script src="https://kit.fontawesome.com/c90807128e.js" crossorigin="anonymous"></script>
+
+        <!-- Bootstrap JavaScript cdn -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        
+        <!-- external js file -->
+        <script src="./js/index.js"></script>
+    </body>
+</html>
